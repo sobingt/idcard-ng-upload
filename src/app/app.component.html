@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="form-group">
+    <label for="exampleFormControlFile1">ID Card Demo</label>
+    <input
+      type="file"
+      class="form-control-file"
+      id="exampleFormControlFile1"
+      (change)="onFileUpload($event)"
+      name="avatar"
+    />
+  </div>
+  <div class="image-preview">
+    <img *ngIf="imagePreview" [src]="imagePreview" style="width: auto; height: 250px" />
+  </div>
+  <button *ngIf="imagePreview" class="btn btn-primary" (click)="OnUploadFile()">Upload</button>
+     
+  <table *ngIf="data.name">
+    <tr>
+      <th>Fields</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>{{data.name}}</td>
+    </tr>
+    <tr>
+      <td>Id</td>
+      <td>{{data.id}}</td>
+    </tr>
+    <tr>
+      <td>Date of Birth</td>
+      <td>{{data.dob}}</td>
+    </tr><tr>
+      <td>Customer Id</td>
+      <td>{{data.custId}}</td>
+    </tr>
+  </table>
+
+</div>
+
+<!--<li *ngFor="let item of data">{{item}}</li> -->
+<router-outlet></router-outlet>
